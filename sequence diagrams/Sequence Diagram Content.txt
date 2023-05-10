@@ -1,0 +1,61 @@
+title Sequence Diagram of Activities
+
+participant Assistant
+participant Dentist
+participant Patient
+participant System/Managment team
+
+Dentist<-Patient:Patient Contact Dentist
+Dentist<-Patient:Patient Request Dentist
+Dentist<-Patient:Patient Book an Appointment \nwith based on the dentist's \nprofile
+
+
+Assistant->Dentist:Assistant Adds Dentist
+Assistant->Dentist:Accepts Payment Records
+Assistant->Patient:Informs Payment Records
+Patient<->Assistant:Contact 
+Assistant->Patient:Accepts Appointment
+Patient->Patient: Checks financial Records
+Patient->Patient: Choose payment method
+Assistant->Dentist:Edit Dentist
+Assistant->Patient:Edit Patient
+Assistant->Patient:Add Patient
+Patient->Patient:Check History
+Dentist->Dentist:Check Patients
+Assistant->System/Managment team:Log in the System
+Dentist->System/Managment team:Log in the System
+Patient->System/Managment team:Log in the System
+
+System/Managment team->Assistant:Log Out the System
+System/Managment team->Dentist:Log Out the System
+System/Managment team->Patient:Log Out the System
+
+System/Managment team->Assistant:Edit/add/remove Assistant
+System/Managment team->Dentist:Edit/add/remove Dentist
+System/Managment team->Patient:Edit/add/remove Patient
+
+
+System/Managment team->Assistant:Check Security
+System/Managment team->Dentist:Check Security 
+System/Managment team->Patient:Check Security 
+
+
+Assistant->System/Managment team: Send information 
+Dentist->System/Managment team: Contact Help Center
+
+
+
+
+
+Assistant->Dentist:Assistant Edit Dentist
+
+Assistant<--Dentist:Doctor Contact Assistant
+Assistant<--Dentist:Doctor Accepts Assistant appointment
+
+
+Dentist->Patient:Accepts Patient
+Patient->Dentist:Send messages
+
+Dentist->Patient:Leaves Recipes
+Dentist->Patient:Leaves Payment Records
+Dentist->Assistant:Informs Payment Records
